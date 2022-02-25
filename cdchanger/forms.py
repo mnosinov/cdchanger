@@ -37,9 +37,9 @@ class CdchangerWizardForm2(forms.ModelForm):
                 HTML('<button class="btn btn-secondary btnPrevious" ' +
                      'name="wizard_goto_step" type="submit" ' +
                      'id="goto_step1_id" ' +
-                     'value="{{ wizard.steps.prev }}">back</button>'),
+                     'value="{{ wizard.steps.prev }}">Back</button>'),
                 HTML('&nbsp;'),
-                Submit('submit', 'next', css_id='next_submit_btn'),
+                Submit('submit', 'Submit', css_id='next_submit_btn'),
                 css_class='form-group'
             ),
         )

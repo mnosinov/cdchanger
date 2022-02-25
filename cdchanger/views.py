@@ -41,6 +41,7 @@ class CdchangerWizard(SessionWizardView):
             print('------get_form---')
             pass
 
+        print(form)
         return form
 
     def get_context_data(self, form, **kwargs):
@@ -79,22 +80,9 @@ class CdchangerWizard(SessionWizardView):
         return self.instance_dict.get(step, None)
 
     def post(self, *args, **kwargs):
-        go_to_step = self.request.POST.get('wizard_goto_step', None)  # get the step name
-        form = self.get_form(data=self.request.POST)
-        current_index = self.get_step_index(self.steps.current)
-        goto_index = self.get_step_index(go_to_step)
-
-        if current_index > goto_index:
-            if form.is_valid():
-                self.storage.set_step_data(self.steps.current, self.process_step(form))
-
-        if form.is_valid():
-            pass
-        else:
-            # print('-- form errors:', form.errors)
-            # print('-- form total_error_count:', form.total_error_count())
-            pass
-
+        form = self.get_form(data=self.request.POST, files=self.request.FILES)
+        self.storage.set_step_data(self.steps.current, self.process_step(form))
+        self.storage.set_step_files(self.steps.current, self.process_step_files(form))
         return super(CdchangerWizard, self).post(*args, **kwargs)
 
     def done(self, form_list, form_dict, **kwargs):

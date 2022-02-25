@@ -8,7 +8,7 @@
 	{% for form in formset.forms %}
 		{{ form.management_form }}
 
-		<tr class="{% cycle 'row1' 'row2' %} formset_row-{{ formset.prefix }}">
+		<tr class="formset_row-{{ formset.prefix }}">
 
 			{% for field in form.visible_fields %}
 

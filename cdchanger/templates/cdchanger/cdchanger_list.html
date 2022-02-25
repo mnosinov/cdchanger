@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}CD changers{% endblock %}
+
+{% block content %}
+	<h1>CD changers</h1>
+
+	{% include 'cdchanger/inc/messages.html' %}
+
+	{% if cdchanger_list %}
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Capacity (disks)</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for cdchanger in cdchanger_list %}
+				<tr>
+					<td>
+						{{ cdchanger.id }}
+					</td>
+					<td>
+						{{ cdchanger.name }}
+					</td>
+					<td>
+						{{cdchanger.capacity}}
+					</td>
+					<td>
+						<a href="">View</a> | 
+						<a href="">Update</a> | 
+						<a href="">Delete</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		There are no cdchangers.
+	{% endif %}
+	<div>
+		<a href="{% url 'cdchanger-create-wizard' %}">Add CD changer (wizard)</a>
+	</div>
+
+{% endblock %}
+
+
+

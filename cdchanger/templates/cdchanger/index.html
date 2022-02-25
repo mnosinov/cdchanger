@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Index page{% endblock %}
+
+{% block content %}
+	<h1>Index page</h1>
+
+	{% block messages %}
+		{% include 'cdchanger/inc/messages.html' %}
+	{% endblock %}
+
+	<ul>
+		<li><a href="{% url 'cdchangers' %}">CD changers</a></li>
+		<li><a href="{% url 'cdchanger-create-wizard' %}">Add CD changer (wizard)</a></li>
+	</ul>
+	
+{% endblock %}
+
+

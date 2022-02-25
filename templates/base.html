@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" media="screen" />
+    {% block styles %}{% endblock %}
+		{% block extra_head %}{% endblock %}
+	</head>
+<body>
+	<header>
+		{% block header %}
+		<nav>
+			<a href="{% url 'index' %}">Index</a>
+		</nav>
+		{% endblock %}
+	</header>
+
+	<main>
+		{% block content %} {% endblock %}
+	</main>
+
+	<footer>
+		{% block footer %}
+			<div class="rside">&copy; Copyright 2022, <a href="#">cdchangers.org</a><br /></div>
+		{% endblock %}
+	</footer>
+
+	{% block scripts_after %}{% endblock %}
+</body>
+</html>

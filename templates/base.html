@@ -5,6 +5,8 @@
 		<meta charset="UTF-8">
 		<title>{% block title %}{% endblock %}</title>
 		<link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" media="screen" />
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% block styles %}{% endblock %}
 		{% block extra_head %}{% endblock %}
 	</head>

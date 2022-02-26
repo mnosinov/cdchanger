@@ -44,6 +44,18 @@ class CdchangerWizardForm2(forms.ModelForm):
             ),
         )
 
+    def clean(self):
+        super(CdchangerWizardForm2, self).clean()
+        disk_formset = DiskFormSet(self.data)
+        disk_formset.is_valid()
+        forms_are_valid = True
+        for form in disk_formset:
+            print(form.cleaned_data)
+            if not form.is_valid() and not form.cleaned_data.get('DELETE'):
+                forms_are_valid = False
+        if not forms_are_valid:
+            raise forms.ValidationError('Disks errors exists.')
+
 
 class DiskForm(forms.ModelForm):
     class Meta:

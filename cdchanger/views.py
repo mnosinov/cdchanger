@@ -41,7 +41,6 @@ class CdchangerWizard(SessionWizardView):
             print('------get_form---')
             pass
 
-        print(form)
         return form
 
     def get_context_data(self, form, **kwargs):

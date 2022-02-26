@@ -1,0 +1,44 @@
+ .dynamic-form-add {
+	 width: 100%;
+ }
+ .dynamic-form-add td {
+	text-align: center;
+	vertical-align: middle;
+	padding-right: 5em;
+}
+
+.formset_row-config_params .col-md-3 {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.formset_row-config_params .col-md-9 {
+	flex: 0 0 95%;
+	max-width: 95%;
+}
+
+.formset_row-config_params .dynamic-form-add {
+	margin-left: 100px;
+	padding-left: 100px;
+}
+
+.formset_delete_field {
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: 1em;
+}
+
+a.formset_delete_field {
+	padding-top: 1.5em;
+}
+
+.formset_row-config_params .form-group {
+	float: left;
+	flex: 0 0 95%;
+	max-width: 95%;
+}
+
+.formset_row_td {
+	vertical-align: top;
+}

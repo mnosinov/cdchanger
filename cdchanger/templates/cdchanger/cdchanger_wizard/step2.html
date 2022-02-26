@@ -18,14 +18,12 @@
 
 	{% include 'cdchanger/inc/messages.html' %}
 
-	<form action="" method="post" id="form-container">
+	<form action="" method="post" class="col-md-4">
 
 		{% csrf_token %}
 
-		<table>
 			{{ wizard.management_form }}
 			{% crispy form %}
-		</table>
 
 	</form>
 {% endblock %}

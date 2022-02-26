@@ -14,11 +14,9 @@
 
 	{% include 'cdchanger/inc/messages.html' %}
 
-	<form action="" method="post">
+	<form action="" method="post" class="col-md-2">
 
 		{% csrf_token %}
-
-		<table>
 			{{ wizard.management_form|crispy }}
 			{% if wizard.form.forms %}
 					{{ wizard.form.management_form|crispy }}
@@ -28,7 +26,6 @@
 			{% else %}
 					{{ wizard.form|crispy }}
 			{% endif %}
-		</table>
 
 		<button type="submit" class="btn btn-primary"  value="submit">Next</button>
 
